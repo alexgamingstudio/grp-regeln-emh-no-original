@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GRP Serverregeln</title>
+<style>
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b1118;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px 15px 50px;
+    line-height: 1.5;
+  }
+  h1, h2 {
+    color: #00b8d4;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  label {
+    font-weight: 700;
+    margin-right: 10px;
+    color: #00b8d4;
+  }
+  select, input[type="search"] {
+    font-size: 1rem;
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-right: 15px;
+    color: #000;
+  }
+  select {
+    min-width: 150px;
+  }
+  input[type="search"] {
+    width: 240px;
+  }
+
+  details {
+    background: #172634;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px #00b8d4aa;
+  }
+  summary {
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 15px 20px;
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    color: #00b8d4;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] summary {
+    border-bottom: 2px solid #00b8d4;
+  }
+  .content {
+    padding: 10px 25px 20px 25px;
+    color: #cfd8dc;
+    font-size: 1rem;
+  }
+  ul {
+    padding-left: 20px;
+    margin-top: 8px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  .example {
+    font-style: italic;
+    color: #90a4ae;
+    margin-top: 8px;
+  }
+  mark {
+    background-color: #00b8d4cc;
+    color: #000;
+    font-weight: 700;
+    padding: 0 3px;
+    border-radius: 3px;
+  }
+  #topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #00b8d4;
+    border: none;
+    color: #000;
+    font-size: 1.5rem;
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 15px #00b8d4cc;
+    display: none;
+    z-index: 100;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  #topBtn:hover, #topBtn:focus {
+    background-color: #008ca8;
+    outline: none;
+  }
+  @media (max-width: 480px) {
+    input[type="search"] {
+      width: 140px;
+      margin-top: 8px;
+      margin-right: 0;
+      display: block;
+    }
+    label, select {
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+  /* Link-Button für Discord */
+  .discord-btn {
+    display: inline-block;
+    background: #7289da;
+    color: white;
+    font-weight: 700;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 0 12px #7289dacc;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  .discord-btn:hover, .discord-btn:focus {
+    background-color: #5b6eae;
+    outline: none;
+  }
+  /* Serverheader */
+  #server-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  #server-header > div {
+    color: #00b8d4;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+  #server-header .right {
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+
+<header id="server-header" role="banner">
+  <div>German RP Server Regeln</div>
+  <div class="right">
+    Owner: Rio<br />
+    Creator der Seite: Alex Gaming<br />
+    Server Code: p85sfhx2<br />
+    <a href="https://discord.gg/QxVUTY8hVa" target="_blank" rel="noopener" class="discord-btn" role="button" aria-label="Discord Server beitreten">Discord Server</a>
+  </div>
+</header>
+
+<div role="search" aria-label="Serverregeln Suche und Filter">
+  <label for="category">Kategorie auswählen:</label>
+  <select id="category" aria-label="Kategorie auswählen">
+    <option value="all">Alle Kategorien</option>
+    <option value="ingame">Ingame Regeln</option>
+    <option value="discord">Discord Regeln</option>
+    <option value="moderator">Moderator Regeln</option>
+  </select>
+
+  <label for="search">Suche:</label>
+  <input type="search" id="search" aria-label="Suchfunktion" placeholder="(Wird ausgebaut)" />
+</div>
+
+<!-- ===== Ingame Regeln ===== -->
+<h2>Ingame Regeln</h2>
+
+<details class="rule" data-category="ingame" data-keywords="respekt respektvoll höflichkeit beleidigungen provokationen diskriminierung toxisch hassrede">
+  <summary>Respektvoller Umgang</summary>
+  <div class="content">
+    <p>Behandle alle Mitglieder mit Höflichkeit und Respekt.</p>
+    <ul>
+      <li>Keine Beleidigungen, Provokationen, Diskriminierung oder toxisches Verhalten.</li>
+      <li>Jeder hat das Recht, sich hier wohlzufühlen – Hassrede wird nicht toleriert.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="ingame" data-keywords="spam werbung text sprachkanal capslock soundboard server social media produkt erlaubnis team">
+  <summary>Kein Spam & keine Werbung</summary>
+  <div class="content">
+    <ul>
+      <li>Spam in Text- oder Sprachkanälen ist untersagt (z. B. wiederholte Nachrichten, Capslock, Soundboards).</li>
+      <li>Werbung für andere Server, Social Media oder Produkte nur mit ausdrücklicher Erlaubnis des Teams.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="ingame" data-keywords="kanal richtig channel posten beschreibung missverständnis">
+  <summary>Richtige Kanäle nutzen</summary>
+  <div class="content">
+    <p>Achte darauf, deine Nachrichten im passenden Kanal zu posten.</p>
+    <p>Lies ggf. die Kanalbeschreibungen, um Missverständnisse zu vermeiden.</p>
+  </div>
+</details>
+
+<details class="rule" data-category="ingame" data-keywords="nsfw illegal gewalt pornografie jugend gefährdend urheberrecht material erlaubnis teilen verboten">
+  <summary>Keine NSFW- oder illegalen Inhalte</summary>
+  <div class="content">
+    <ul>
+      <li>Inhalte mit Gewalt, Pornografie oder anderen jugendgefährdenden Themen sind verboten.</li>
+      <li>Auch das Teilen von urheberrechtlich geschütztem Material ohne Erlaubnis ist untersagt.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="ingame" data-keywords="sprachkanal schreien störgeräusch musikbot zustimmung ausreden gesprächskultur">
+  <summary>Verhalten in Sprachkanälen</summary>
+  <div class="content">
+    <ul>
+      <li>Kein Schreien, Störgeräusche oder Musikbots ohne Zustimmung.</li>
+      <li>Lass andere ausreden und halte dich an die Gesprächskultur.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="ingame" data-keywords="anweisung team admin moderator ordnung folgen ungerecht behandelt dm respektvoll">
+  <summary>Folge den Anweisungen des Teams</summary>
+  <div class="content">
+    <p>Admins und Moderatoren sorgen für Ordnung – ihren Anweisungen ist Folge zu leisten.</p>
+    <p>Wenn du dich ungerecht behandelt fühlst, kannst du dich respektvoll per DM an das Team wenden.</p>
+  </div>
+</details>
+
+<details class="rule" data-category="ingame" data-keywords="nickname avatar beleidigend anstößig verwirrend impersonation verbot">
+  <summary>Nicknames & Avatare</summary>
+  <div class="content">
+    <ul>
+      <li>Wähle einen Nickname und Avatar, die nicht beleidigend, anstößig oder verwirrend sind.</li>
+      <li>Impersonation (sich als jemand anderes ausgeben) ist verboten.</li>
+    </ul>
+  </div>
+</details>
+
+<h2>Allgemeine RP-Regeln</h2>
+
+<details class="rule" data-category="ingame" data-keywords="rp pflicht roleplay angst power meta-gaming combat-logging ooc voice respekt rassismus sexism troll fail-rp">
+  <summary>RP ist Pflicht & Grundlagen</summary>
+  <div class="content">
+    <ul>
+      <li>RP ist Pflicht – jeder Spieler muss sich an realistisches Roleplay halten.</li>
+      <li>Angst-RP: Dein Charakter hat Angst um sein Leben – handle entsprechend.</li>
+      <li>Power-RP verboten – keine übermenschlichen Aktionen (z. B. aus Handschellen befreien).</li>
+      <li>Meta-Gaming verboten – keine Infos aus Discord, Streams oder OOC im RP verwenden.</li>
+      <li>Combat-Logging verboten – Spiel nicht während RP-Situationen verlassen.</li>
+      <li>OOC im Voice nur im Notfall – nutze /ooc oder Discord für alles außerhalb des RP.</li>
+      <li>Respektvoller Umgang – kein Rassismus, Sexismus, Beleidigungen oder Trolling.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="ingame" data-keywords="rdm vdm frp cop-baiting trolling verboten töten überfahren unrealistisch provozieren sabotieren lächerlich fail-rp">
+  <summary>🚫 Verbotenes Verhalten</summary>
+  <div class="content">
+    <ul>
+      <li>❌ RDM – Töten ohne RP-Hintergrund.</li>
+      <li>❌ VDM – Überfahren ohne RP-Kontext.</li>
+      <li>❌ FRP – Unrealistisches Verhalten (z. B. keine Angst vor Waffen, Tanzen im Schusswechsel).</li>
+      <li>❌ Cop-Baiting – Polizei absichtlich provozieren ohne RP-Ziel.</li>
+      <li>❌ Trolling – RP absichtlich sabotieren oder ins Lächerliche ziehen.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="ingame" data-keywords="polizei feuerwehr rettungsdienst whitelist dienst realistisch blaulicht missbrauch waffen uniform korruption genehmigung">
+  <summary>🚓 Einsatzdienste & Fraktionen</summary>
+  <div class="content">
+    <ul>
+      <li>Polizei, Feuerwehr & Rettungsdienst sind frei zugänglich – aktuell keine Whitelist.</li>
+      <li>Dienstverhalten muss realistisch sein – keine Blaulichtfahrten ohne Grund.</li>
+      <li>Missbrauch von Dienstrechten (z. B. Waffen, Uniformen) ist verboten.</li>
+      <li>Korruption nur mit Genehmigung der Serverleitung.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="ingame" data-keywords="jobs unternehmen kriminell sinnvoll realistisch geiselnahme überfall absprache cops">
+  <summary>🏙️ Ziviles & Kriminelles RP</summary>
+  <div class="content">
+    <ul>
+      <li>Jobs & Unternehmen dürfen frei genutzt werden – aber mit RP-Hintergrund.</li>
+      <li>Kriminelles RP ist erlaubt, aber muss sinnvoll & realistisch sein.</li>
+      <li>Geiselnahmen & Überfälle nur mit Absprache & Mindestanzahl an Cops online.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="ingame" data-keywords="ooc rp support ticketsystem spam beleidigungen toxisch">
+  <summary>💬 Kommunikation & Support</summary>
+  <div class="content">
+    <ul>
+      <li>Kein OOC im RP – nutze /ooc oder Discord.</li>
+      <li>Supportfälle bitte über das Ticketsystem im Discord melden.</li>
+      <li>Kein Spam, keine Beleidigungen, kein toxisches Verhalten.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="ingame" data-keywords="streaming stream-sniping aufnahme veröffentlichen bloßstellen">
+  <summary>📷 Streaming & Aufnahmen</summary>
+  <div class="content">
+    <ul>
+      <li>Streaming ist erlaubt – kein Stream-Sniping!</li>
+      <li>Aufnahmen nur veröffentlichen, wenn niemand bloßgestellt wird.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="ingame" data-keywords="konsequenz verwarnung kick ban temporär permanent">
+  <summary>⚖️ Konsequenzen</summary>
+  <div class="content">
+    <p>Verwarnung, Kick, temporärer oder permanenter Ban – je nach Schwere des Verstoßes.</p>
+  </div>
+</details>
+
+<!-- ===== Discord Regeln ===== -->
+<h2>Discord Regeln</h2>
+
+<details class="rule" data-category="discord" data-keywords="respekt beleidigung provokation diskriminierung toxisch hassrede">
+  <summary>Respektvoller Umgang im Discord</summary>
+  <div class="content">
+    <ul>
+      <li>Behandle alle Mitglieder im Discord mit Höflichkeit und Respekt.</li>
+      <li>Keine Beleidigungen, Provokationen, Diskriminierung oder toxisches Verhalten.</li>
+      <li>Hassrede und diskriminierende Aussagen sind nicht erlaubt.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="discord" data-keywords="spam werbung text sprachkanal capslock soundboard erlaubnis team">
+  <summary>Kein Spam & keine unerlaubte Werbung</summary>
+  <div class="content">
+    <ul>
+      <li>Spam in allen Kanälen (Text und Sprache) ist verboten.</li>
+      <li>Werbung für andere Server, Social Media oder Produkte nur mit ausdrücklicher Erlaubnis des Teams.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="discord" data-keywords="richtige kanal kanalbeschreibung posten">
+  <summary>Richtige Kanäle nutzen</summary>
+  <div class="content">
+    <p>Achte darauf, deine Nachrichten im passenden Discord-Kanal zu posten.</p>
+    <p>Beachte die Kanalbeschreibungen, um Missverständnisse zu vermeiden.</p>
+  </div>
+</details>
+
+<details class="rule" data-category="discord" data-keywords="nsfw illegal gewalt pornografie jugend gefährdend urheberrecht material erlaubnis">
+  <summary>Keine NSFW- oder illegalen Inhalte</summary>
+  <div class="content">
+    <ul>
+      <li>Das Posten von NSFW-, Gewalt- oder illegalen Inhalten ist im Discord verboten.</li>
+      <li>Das Teilen von urheberrechtlich geschütztem Material ohne Erlaubnis ist untersagt.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="discord" data-keywords="verhalten sprachkanal schreien störgeräusch musikbot zustimmung gesprächskultur">
+  <summary>Verhalten in Sprachkanälen</summary>
+  <div class="content">
+    <ul>
+      <li>Kein Schreien, keine Störgeräusche oder Musikbots ohne Zustimmung.</li>
+      <li>Halte dich an die Gesprächskultur und lass andere ausreden.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="discord" data-keywords="anweisung team admin moderator ordnung folgen dm">
+  <summary>Folge den Anweisungen des Teams</summary>
+  <div class="content">
+    <p>Admins und Moderatoren sorgen für Ordnung – ihren Anweisungen ist Folge zu leisten.</p>
+    <p>Bei Ungerechtigkeiten kannst du dich respektvoll per DM an das Team wenden.</p>
+  </div>
+</details>
+
+<details class="rule" data-category="discord" data-keywords="nickname avatar beleidigend anstößig verwirrend impersonation verboten">
+  <summary>Nicknames & Avatare im Discord</summary>
+  <div class="content">
+    <ul>
+      <li>Wähle Nickname und Avatar, die nicht beleidigend, anstößig oder verwirrend sind.</li>
+      <li>Impersonation (sich als jemand anderes ausgeben) ist im Discord verboten.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- ===== Moderator Regeln ===== -->
+<h2>Moderator Regeln</h2>
+
+<details class="rule" data-category="moderator" data-keywords="freundlich höflich hilfsbereit aushängeschild">
+  <summary>⚙️ Allgemeines Verhalten</summary>
+  <div class="content">
+    <ul>
+      <li>Sei stets nett, höflich und hilfsbereit – du bist das Aushängeschild des Teams.</li>
+      <li>Ignoriere kein Fehlverhalten wie z. B. Fail-RP (FRP), RDM oder VDM – greife deeskalierend ein.</li>
+      <li>Keine Bevorzugung von Freunden – Neutralität ist Pflicht.</li>
+      <li>Respektiere andere Teammitglieder – auch bei Meinungsverschiedenheiten.</li>
+      <li>Diskussionen im Team gehören intern geklärt – nicht vor Spielern.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="moderator" data-keywords="shutdown serverlock bringall flymode 1vs1 battles spawn trolling abuse">
+  <summary>🚫 Verbotene Aktionen</summary>
+  <div class="content">
+    <ul>
+      <li>❌ Kein Shut-Down des Servers ohne ausdrückliche Erlaubnis.</li>
+      <li>❌ Kein Server-Lock, außer bei Notfällen und mit Rücksprache.</li>
+      <li>❌ /bringall ist strengstens untersagt – nutze gezielte Teleports.</li>
+      <li>❌ Fly-Modus darf nicht an Spieler vergeben werden – auch nicht an Freunde.</li>
+      <li>❌ Battles wie 1vs1 sind für Moderatoren tabu – bleib neutral.</li>
+      <li>❌ Kein Spawnen von Fahrzeugen oder Items für Spieler ohne triftigen Grund.</li>
+      <li>❌ Kein Trolling, Abuse von Befehlen oder unnötiges Eingreifen ins RP.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="moderator" data-keywords="rotlicht sirene einsatz fahrzeugvorschriften sonderrechte rp adminrechte beobachten eingreifen">
+  <summary>🚓 Einsatzregeln & RP-Verhalten</summary>
+  <div class="content">
+    <ul>
+      <li>🚨 Rotlicht und Sirenen nur bei tatsächlichem Einsatz verwenden.</li>
+      <li>🚗 Fahrzeugvorschriften gelten auch für Moderatoren – keine Sonderrechte.</li>
+      <li>🎭 RP wird respektiert – Adminrechte nur im Notfall sichtbar einsetzen.</li>
+      <li>👁️ Beobachte unauffällig bei Verdacht auf Regelbruch – kein unnötiges Eingreifen.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="moderator" data-keywords="kenne regeln durchsetzen kommunizieren stress screenshot clip neue spieler hilfe">
+  <summary>🛠️ Administrative Aufgaben</summary>
+  <div class="content">
+    <ul>
+      <li>🧠 Kenne die Serverregeln auswendig – du musst sie durchsetzen können.</li>
+      <li>🗣️ Kommuniziere klar und ruhig – auch bei Stresssituationen.</li>
+      <li>🧾 Screenshots oder Clips bei schwerwiegenden Fällen sichern.</li>
+      <li>🧭 Neue Spieler unterstützen – z. B. durch kurze Einweisungen oder Hilfestellung.</li>
+    </ul>
+  </div>
+</details>
+
+<details class="rule" data-category="moderator" data-keywords="teamwork adminleitung vorbild kommunikation info problem">
+  <summary>📣 Kommunikation & Teamwork</summary>
+  <div class="content">
+    <ul>
+      <li>🤝 Arbeite eng mit anderen Moderatoren/Admins zusammen – Teamwork ist alles.</li>
+      <li>📢 Wichtige Infos oder Probleme direkt an die Adminleitung weitergeben.</li>
+      <li>🧑‍🏫 Sei ein Vorbild – dein Verhalten prägt die Community.</li>
+    </ul>
+  </div>
+</details>
+
+<button id="topBtn" aria-label="Zurück zum Anfang" title="Zurück nach oben">⬆️</button>
+
+<script>
+  const topBtn = document.getElementById("topBtn");
+  const categorySelect = document.getElementById("category");
+  const searchInput = document.getElementById("search");
+  const rules = Array.from(document.querySelectorAll(".rule"));
+
+  // Escape RegExp special characters for safe search
+  function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  // Highlight search term in text
+  function highlight(text, term) {
+    const re = new RegExp(`(${escapeRegExp(term)})`, "gi");
+    return text.replace(re, '<mark>$1</mark>');
+  }
+
+  // Filter and highlight rules according to search and category
+  function filterRules() {
+    const selectedCat = categorySelect.value;
+    const searchTerm = searchInput.value.trim().toLowerCase();
+
+    rules.forEach(rule => {
+      const inCategory = (selectedCat === "all") || (rule.dataset.category === selectedCat);
+      const textContent = rule.textContent.toLowerCase();
+      const keywords = rule.dataset.keywords ? rule.dataset.keywords.toLowerCase() : "";
+
+      if (searchTerm) {
+        // Prüfe, ob Suchbegriff im Text oder in Keywords enthalten ist
+        if ((textContent.includes(searchTerm) || keywords.includes(searchTerm)) && inCategory) {
+          rule.style.display = "block";
+
+          // Highlight nur im summary (Titel)
+          const summary = rule.querySelector("summary");
+          if (summary) {
+            summary.innerHTML = summary.textContent.replace(/<\/?mark>/gi, "");
+            summary.innerHTML = highlight(summary.textContent, searchTerm);
+          }
+        } else {
+          rule.style.display = "none";
+          // Entferne Highlight
+          const summary = rule.querySelector("summary");
+          if (summary) {
+            summary.innerHTML = summary.textContent.replace(/<\/?mark>/gi, "");
+          }
+        }
+      } else {
+        // Keine Suche, nur Filter nach Kategorie
+        rule.style.display = inCategory ? "block" : "none";
+        // Entferne Highlight
+        const summary = rule.querySelector("summary");
+        if (summary) {
+          summary.innerHTML = summary.textContent.replace(/<\/?mark>/gi, "");
+        }
+      }
+    });
+  }
+
+  categorySelect.addEventListener("change", filterRules);
+  searchInput.addEventListener("input", filterRules);
+
+  filterRules();
+
+  window.addEventListener("scroll", () => {
+    topBtn.style.display = window.pageYOffset > 350 ? "block" : "none";
+  });
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+</body>
+</html>
